@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}Doctor Registration{% endblock %}
+
+{% block content %}
+<div class="row mt-5">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 p-2 mt-5">
+        <div class="card p-4 mt-5">
+            <form action="{{ url_for('doctor_register') }}" method="post">
+                <div class="h4 text-center h6">Doctor Registration</div>
+                <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input type="text" class="form-control p-2 mt-1" id="Name" placeholder="Full Name" name="Name" required>
+                </div>
+                <div class="form-group mt-1">
+                    <label for="Email">Email</label>
+                    <input type="email" class="form-control mt-1 p-2" id="Email" placeholder="Email Address" name="Email" required>
+                </div>
+                <div class="form-group mt-1">
+                    <label for="Phone">Phone Number</label>
+                    <input type="tel" class="form-control mt-1 p-2" id="Phone" placeholder="Phone Number" name="Phone" required>
+                </div>
+                <div class="form-group mt-1">
+                    <label for="Password">Password</label>
+                    <input type="password" class="form-control mt-1 p-2" id="Password" placeholder="Password" name="Password" required>
+                </div>
+                <div class="mt-2">
+                    <input type="submit" value="Register" class="btn btn-info w-100">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

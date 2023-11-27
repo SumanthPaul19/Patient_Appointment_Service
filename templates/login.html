@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row mt-5">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 p-2 mt-5">
+        <div class="card p-4 mt-5">
+            <div class="h4 text-center h6">Select Login Type</div>
+            <div class="text-center">
+                <a href="{{ url_for('doctor_login') }}" class="btn btn-primary mt-3">Doctor Login</a>
+                <a href="{{ url_for('patient_login') }}" class="btn btn-success mt-3">Patient Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

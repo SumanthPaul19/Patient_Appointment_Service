@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}Doctor{% endblock %}
+
+{% block content %}
+<br>
+<h1 style="align-items=center">Doctors Dashboard</h1>
+<br>
+<div>
+    <h2>Doctors' Details</h2>
+    <table class="table table-hover" style="background-color: #FFF2F2;">
+        <thead style="background-color: #FAD4D4;">
+            <tr>
+<!--                <th scope="col">ID</th>-->
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <!-- Add more columns here if needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for doctor in doctors %}
+                <tr>
+                    <td>{{ doctor[1] }}</td>
+                    <td>{{ doctor[2] }}</td>
+                    <!-- Add more columns here if needed -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <h2>Patient Appointments</h2>
+    <table class="table table-hover" style="background-color: #FFF2F2;">
+        <thead style="background-color: #FAD4D4;">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Patient Email</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+                <tr>
+                    <td>{{ appointment[0] }}</td>
+                    <td>{{ appointment[1] }}</td>
+                    <td>{{ appointment[2] }}</td>
+                    <td>{{ appointment[3] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

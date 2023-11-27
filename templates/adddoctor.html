@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}Add Doctor{% endblock %}
+
+{% block content %}
+<br>
+<h3>Fill in the required details</h3>
+
+<form style="padding: 15px;" action="/adddoctor" method="POST">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter name" value="{{ request.form['name'] }}" name = "name">
+    <small id="name" class="form-text text-muted">Enter Full Name</small>
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}Patient Appointments{% endblock %}
+
+{% block content %}
+<br>
+<h1>Your Appointments</h1>
+<br>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Actions</th> <!-- Add a new column for actions -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in appointments %}
+            <tr>
+                <td>{{ appointment[0] }}</td>
+                <td>{{ appointment[1] }}</td>
+                <td>
+                    <form action="{{ url_for('cancel_appointment') }}" method="post">
+                        <input type="hidden" name="appointment_date" value="{{ appointment[0] }}">
+                        <input type="hidden" name="appointment_time" value="{{ appointment[1] }}">
+                        <button type="submit" class="btn btn-danger">Cancel</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- Add the button for booking an appointment -->
+<a href="{{ url_for('book_appointment') }}" class="btn btn-primary">Book an Appointment</a>
+
+{% endblock %}

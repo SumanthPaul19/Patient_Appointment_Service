@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}Book Appointment{% endblock %}
+
+{% block content %}
+<br>
+<h1>Book an Appointment</h1>
+<br>
+<form method="post" action="{{ url_for('book_appointment') }}">
+    <div class="mb-3">
+        <label for="date" class="form-label">Date:</label>
+        <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+    <div class="mb-3">
+        <label for="time" class="form-label">Time:</label>
+        <input type="time" class="form-control" id="time" name="time" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Book Appointment</button>
+</form>
+{% endblock %}
