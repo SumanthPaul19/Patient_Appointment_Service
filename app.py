@@ -4,7 +4,6 @@ import pymysql.cursors
 from werkzeug.security import generate_password_hash, check_password_hash
 import pymysql
 from waitress import serve
-import logging
 import bcrypt
 from passlib.hash import sha256_crypt
 
